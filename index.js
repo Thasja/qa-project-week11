@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 const port = 4000
-const path = require('path');
+const cors = require('cors');
+app.use(cors());
+app.use(express.json());
+//const path = require('path');
 
-app.use(express.static(path.join(__dirname, '/../qa-project-week09')));
+//app.use(express.static(path.join(__dirname, '/../qa-project-week09')));
 
 
 app.post('/register', (req, res) => {
+  fullName = req.body.fullName;
+  email = req.body.email;
+  password = req.body.password;
   res.json({result: 'Success'})
 })
   
